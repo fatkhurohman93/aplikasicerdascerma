@@ -1,27 +1,855 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Cerdas Cermat Pro</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Quiz Challenge Generator Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
+    --color-amber-900: oklch(41.4% 0.112 45.904);
+    --color-emerald-600: oklch(59.6% 0.145 163.225);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-indigo-50: oklch(96.2% 0.018 272.314);
+    --color-indigo-100: oklch(93% 0.034 272.788);
+    --color-indigo-200: oklch(87% 0.065 274.039);
+    --color-indigo-500: oklch(58.5% 0.233 277.117);
+    --color-indigo-600: oklch(51.1% 0.262 276.966);
+    --color-indigo-700: oklch(45.7% 0.24 277.023);
+    --color-indigo-800: oklch(39.8% 0.195 277.366);
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-gray-900: oklch(21% 0.034 264.665);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-6xl: 72rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --tracking-wide: 0.025em;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .relative {
+    position: relative;
+  }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-0\.5 {
+    margin-top: calc(var(--spacing) * 0.5);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-fit {
+    height: fit-content;
+  }
+  .max-h-\[380px\] {
+    max-height: 380px;
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-6xl {
+    max-width: var(--container-6xl);
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .rounded-t {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
+  .border-amber-200 {
+    border-color: var(--color-amber-200);
+  }
+  .border-gray-100 {
+    border-color: var(--color-gray-100);
+  }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .border-indigo-100 {
+    border-color: var(--color-indigo-100);
+  }
+  .border-indigo-600 {
+    border-color: var(--color-indigo-600);
+  }
+  .border-transparent {
+    border-color: transparent;
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-emerald-600 {
+    background-color: var(--color-emerald-600);
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-gray-800 {
+    background-color: var(--color-gray-800);
+  }
+  .bg-indigo-50 {
+    background-color: var(--color-indigo-50);
+  }
+  .bg-indigo-200 {
+    background-color: var(--color-indigo-200);
+  }
+  .bg-indigo-600 {
+    background-color: var(--color-indigo-600);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .p-2\.5 {
+    padding: calc(var(--spacing) * 2.5);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pr-1 {
+    padding-right: calc(var(--spacing) * 1);
+  }
+  .pb-3 {
+    padding-bottom: calc(var(--spacing) * 3);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .text-amber-900 {
+    color: var(--color-amber-900);
+  }
+  .text-emerald-600 {
+    color: var(--color-emerald-600);
+  }
+  .text-gray-400 {
+    color: var(--color-gray-400);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-indigo-600 {
+    color: var(--color-indigo-600);
+  }
+  .text-indigo-800 {
+    color: var(--color-indigo-800);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .opacity-90 {
+    opacity: 90%;
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-200 {
+    --tw-duration: 200ms;
+    transition-duration: 200ms;
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .hover\:bg-emerald-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-emerald-700);
+      }
+    }
+  }
+  .hover\:bg-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-200);
+      }
+    }
+  }
+  .hover\:bg-gray-900 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-900);
+      }
+    }
+  }
+  .hover\:bg-indigo-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-indigo-700);
+      }
+    }
+  }
+  .hover\:text-indigo-600 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-indigo-600);
+      }
+    }
+  }
+  .hover\:text-red-500 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-red-500);
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .focus\:ring-2 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:ring-indigo-500 {
+    &:focus {
+      --tw-ring-color: var(--color-indigo-500);
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
+    }
+  }
+  .sm\:justify-between {
+    @media (width >= 40rem) {
+      justify-content: space-between;
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:text-sm {
+    @media (width >= 48rem) {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+  }
+  .lg\:col-span-2 {
+    @media (width >= 64rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-duration: initial;
+    }
+  }
+}
+</style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
     <header class="bg-indigo-600 text-white shadow-md p-4 mb-6">
         <div class="container mx-auto flex justify-between items-center">
             <div>
-                <h1 class="text-2xl font-bold tracking-wide">🧠 CerdasCermat Gen</h1>
-                <p class="text-xs opacity-90 mt-0.5">Data otomatis tersimpan di Browser (LocalStorage)</p>
+                <h1 class="text-2xl font-bold tracking-wide">🧠 Quiz Challenge Gen</h1>
+                <p class="text-xs opacity-90 mt-0.5">Data is automatically saved in your browser (LocalStorage)</p>
             </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 max-w-6xl">
         <div class="flex border-b border-gray-200 mb-6 bg-white rounded-t shadow-sm">
-            <button onclick="switchTab('manual')" id="tab-manual" class="flex-1 py-4 text-center border-b-2 border-indigo-600 text-indigo-600 font-semibold focus:outline-none transition-all cursor-pointer">📝 Input Manual</button>
-            <button onclick="switchTab('json')" id="tab-json" class="flex-1 py-4 text-center border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none transition-all cursor-pointer">💻 Format JSON</button>
-            <button onclick="switchTab('preview')" id="tab-preview" class="flex-1 py-4 text-center border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none transition-all cursor-pointer">🎮 Simulasi Game (<span id="count-badge">0</span>)</button>
+            <button onclick="switchTab('manual')" id="tab-manual" class="flex-1 py-4 text-center border-b-2 border-indigo-600 text-indigo-600 font-semibold focus:outline-none transition-all cursor-pointer">📝 Manual Input</button>
+            <button onclick="switchTab('json')" id="tab-json" class="flex-1 py-4 text-center border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none transition-all cursor-pointer">💻 JSON Format</button>
+            <button onclick="switchTab('preview')" id="tab-preview" class="flex-1 py-4 text-center border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none transition-all cursor-pointer">🎮 Game Simulation (<span id="count-badge">0</span>)</button>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -29,78 +857,84 @@
             <div id="panel-kiri-konten" class="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all duration-300">
                 
                 <div id="panel-manual" class="space-y-4">
-                    <h2 class="text-xl font-bold text-gray-700 mb-2">Tambah Soal Secara Manual</h2>
+                    <h2 class="text-xl font-bold text-gray-700 mb-2">Add Question Manually</h2>
                     <div>
-                        <label class="block text-sm font-medium text-gray-600 mb-1">Pertanyaan / Soal</label>
-                        <textarea id="manual-soal" rows="2" class="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Contoh: Apa ibu kota negara Indonesia?"></textarea>
+                        <label class="block text-sm font-medium text-gray-600 mb-1">Question</label>
+                        <textarea id="manual-soal" rows="2" class="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Example: What is the capital city of Indonesia?"></textarea>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-600 mb-1">Pilihan A</label>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Option A</label>
                             <input type="text" id="opt-A" class="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-600 mb-1">Pilihan B</label>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Option B</label>
                             <input type="text" id="opt-B" class="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-600 mb-1">Pilihan C</label>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Option C</label>
                             <input type="text" id="opt-C" class="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-600 mb-1">Pilihan D</label>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Option D</label>
                             <input type="text" id="opt-D" class="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-600 mb-1">Jawaban Benar</label>
+                        <label class="block text-sm font-medium text-gray-600 mb-1">Correct Answer</label>
                         <select id="manual-jawaban" class="w-full p-2.5 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="A">Pilihan A</option>
-                            <option value="B">Pilihan B</option>
-                            <option value="C">Pilihan C</option>
-                            <option value="D">Pilihan D</option>
+                            <option value="A">Option A</option>
+                            <option value="B">Option B</option>
+                            <option value="C">Option C</option>
+                            <option value="D">Option D</option>
                         </select>
                     </div>
-                    <button onclick="tambahSoalManual()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 px-4 rounded-md transition duration-200 shadow-sm cursor-pointer">✨ Tambahkan ke Daftar</button>
+                    <button onclick="addQuestionManually()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 px-4 rounded-md transition duration-200 shadow-sm cursor-pointer">✨ Add to List</button>
                 </div>
 
                 <div id="panel-json" class="hidden space-y-4">
                     <div class="flex justify-between items-center mb-2">
                         <h2 class="text-xl font-bold text-gray-700">Import via JSON</h2>
-                        <button onclick="loadTemplateJSON()" class="text-xs text-indigo-600 hover:underline cursor-pointer">Gunakan Template</button>
+                        <button onclick="loadTemplateJSON()" class="text-xs text-indigo-600 hover:underline cursor-pointer">Use Template</button>
                     </div>
-                    <p class="text-xs text-gray-500">Masukkan array JSON dengan format properti: <code>soal</code>, <code>pilihan</code> (array isi 4), dan <code>jawaban</code> (huruf A-D).</p>
-                    <textarea id="json-input" rows="10" class="w-full p-3 font-mono text-sm border border-gray-300 rounded-md bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="[&#10;  {&#10;    &quot;soal&quot;: &quot;...&quot;,&#10;    &quot;pilihan&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;],&#10;    &quot;jawaban&quot;: &quot;A&quot;&#10;  }&#10;]"></textarea>
-                    <button onclick="importJSON()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 px-4 rounded-md transition duration-200 shadow-sm cursor-pointer">🚀 Proses & Validasi JSON</button>
+                    <p class="text-xs text-gray-500">Enter a JSON array using these properties: <code>question</code>, <code>options</code> (array of 4 items), and <code>answer</code> (A-D).</p>
+                    <textarea id="json-input" rows="10" class="w-full p-3 font-mono text-sm border border-gray-300 rounded-md bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="[
+  {
+    &quot;question&quot;: &quot;...&quot;,
+    &quot;options&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;],
+    &quot;answer&quot;: &quot;A&quot;
+  }
+]"></textarea>
+                    <button onclick="importJSON()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 px-4 rounded-md transition duration-200 shadow-sm cursor-pointer">🚀 Process &amp; Validate JSON</button>
                 </div>
 
                 <div id="panel-preview" class="hidden space-y-6">
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 border-b border-gray-100 pb-3">
-                        <h2 class="text-xl font-bold text-gray-700">🎮 Simulasi Cerdas Cermat</h2>
+                        <h2 class="text-xl font-bold text-gray-700">🎮 Quiz Simulation</h2>
                         
                         <div class="flex items-center space-x-2 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-md text-sm">
                             <input type="checkbox" id="toggle-hide-list" onchange="togglePanelKanan(this.checked)" class="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 cursor-pointer">
-                            <label for="toggle-hide-list" class="cursor-pointer select-none text-amber-900 font-medium text-xs md:text-sm">👁️ Sembunyikan Kunci Jawaban (Fokus Game)</label>
+                            <label for="toggle-hide-list" class="cursor-pointer select-none text-amber-900 font-medium text-xs md:text-sm">👁️ Hide Answer Key (Game Mode)</label>
                         </div>
                     </div>
 
                     <div id="game-empty" class="text-center py-12 text-gray-400">
-                        <p class="text-lg">Belum ada soal untuk dimainkan.</p>
-                        <p class="text-sm">Silakan tambah soal lewat tab Manual atau JSON terlebih dahulu.</p>
+                        <p class="text-lg">No questions available to play.</p>
+                        <p class="text-sm">Please add questions through the Manual or JSON tab first.</p>
                     </div>
                     
                     <div id="game-active" class="hidden bg-indigo-50 border border-indigo-100 rounded-xl p-6 relative">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="bg-indigo-200 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Soal <span id="game-index">1</span> dari <span id="game-total">1</span></span>
-                            <span id="game-score" class="text-sm font-semibold text-emerald-600">Skor: 0</span>
+                            <span class="bg-indigo-200 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Question <span id="game-index">1</span> of <span id="game-total">1</span></span>
+                            <span id="game-score" class="text-sm font-semibold text-emerald-600">Score: 0</span>
                         </div>
-                        <h3 id="game-soal-text" class="text-lg font-bold text-gray-800 mb-6">Pertanyaan akan muncul di sini?</h3>
+                        <h3 id="game-soal-text" class="text-lg font-bold text-gray-800 mb-6">The question will appear here.</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="game-options-container">
                             </div>
                         <div id="game-feedback" class="mt-4 p-3 rounded-md text-center font-semibold hidden"></div>
                         <div class="flex justify-between items-center mt-6 pt-4 border-t border-indigo-100">
                             <button onclick="resetGame()" class="text-sm text-gray-500 hover:text-red-500 cursor-pointer">Reset Game</button>
-                            <button id="btn-next-game" onclick="nextGameQuestion()" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 hidden cursor-pointer">Soal Berikutnya ➔</button>
+                            <button id="btn-next-game" onclick="nextGameQuestion()" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 hidden cursor-pointer">Next Question ➔</button>
                         </div>
                     </div>
                 </div>
@@ -110,21 +944,19 @@
             <div id="panel-kanan-daftar" class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-fit space-y-4 transition-all duration-300">
                 <div class="flex justify-between items-center border-b border-gray-100 pb-3">
                     <h3 class="font-bold text-gray-700 flex items-center gap-2">
-                        📋 Daftar Soal Saat Ini
+                        📋 Current Question List
                     </h3>
-                    <button onclick="clearSemuaSoal()" class="text-xs text-red-500 hover:underline cursor-pointer">Hapus Semua</button>
+                    <button onclick="clearAllQuestions()" class="text-xs text-red-500 hover:underline cursor-pointer">Delete All</button>
                 </div>
                 
-                <div id="soal-list-container" class="max-h-[380px] overflow-y-auto space-y-3 pr-1 text-sm text-gray-400 text-center py-6">
-                    Belum ada soal terkumpul.
-                </div>
+                <div id="soal-list-container" class="max-h-[380px] overflow-y-auto space-y-3 pr-1 text-sm text-gray-400 text-center py-6"><p class="text-sm text-gray-400 text-center py-6">No questions have been added yet.</p></div>
 
                 <div class="pt-4 border-t border-gray-100 space-y-2">
                     <button onclick="downloadJSON()" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-medium py-2 px-4 rounded-md text-sm transition flex justify-center items-center gap-2 cursor-pointer">
-                        📥 Download File JSON
+                        📥 Download JSON File
                     </button>
                     <button onclick="salinJSON()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md text-sm transition cursor-pointer">
-                        📋 Salin JSON ke Clipboard
+                        📋 Copy JSON to Clipboard
                     </button>
                 </div>
             </div>
@@ -133,25 +965,25 @@
     </main>
 
     <footer class="text-center py-8 text-xs text-gray-400 mt-12 border-t border-gray-200">
-        Generator Cerdas Cermat &copy; 2026 - Didukung Penyimpanan Otomatis LocalStorage.
+        Quiz Challenge Generator © 2026 - Powered by automatic LocalStorage saving.
     </footer>
 
     <script>
         // --- DATA MANAGEMENT (LOCALSTORAGE) ---
-        let daftarSoal = JSON.parse(localStorage.getItem('cc_daftar_soal')) || [];
+        let questionList = JSON.parse(localStorage.getItem('cc_question_list')) || [];
         
         let gameState = {
             currentIndex: 0,
-            skor: 0,
-            sudahDijawab: false
+            score: 0,
+            answered: false
         };
 
         document.addEventListener('DOMContentLoaded', () => {
-            perbaruiTampilan();
+            updateDisplay();
         });
 
-        function simpanDataKeStorage() {
-            localStorage.setItem('cc_daftar_soal', JSON.stringify(daftarSoal));
+        function saveDataToStorage() {
+            localStorage.setItem('cc_question_list', JSON.stringify(questionList));
         }
 
         // --- INTERFACE/TAB NAVIGATION ---
@@ -169,18 +1001,18 @@
                 }
             });
 
-            // Otomatis kembalikan atau sesuaikan panel kanan saat berganti tab
+            // Automatically restore or adjust the right panel when switching tabs
             const isHidingChecked = document.getElementById('toggle-hide-list').checked;
             if (tabName === 'preview') {
                 togglePanelKanan(isHidingChecked);
                 initGame();
             } else {
-                // Selalu munculkan kembali panel kanan jika kembali ke tab input data
+                // Always show the right panel again when returning to an input tab
                 togglePanelKanan(false); 
             }
         }
 
-        // FUNGSI UTAMA: Sembunyikan / Tampilkan Panel Kanan
+        // MAIN FUNCTION: Hide / Show Right Panel
         function togglePanelKanan(isHiding) {
             const panelKanan = document.getElementById('panel-kanan-daftar');
             const panelKiri = document.getElementById('panel-kiri-konten');
@@ -188,40 +1020,40 @@
             if (isHiding) {
                 panelKanan.classList.add('hidden');
                 panelKiri.classList.remove('lg:col-span-2');
-                panelKiri.classList.add('lg:col-span-3'); // Expand panel game jadi full width
+                panelKiri.classList.add('lg:col-span-3'); // Expand the game panel to full width
             } else {
                 panelKanan.classList.remove('hidden');
                 panelKiri.classList.remove('lg:col-span-3');
-                panelKiri.classList.add('lg:col-span-2'); // Kembalikan ukuran semula
+                panelKiri.classList.add('lg:col-span-2'); // Restore the original size
             }
         }
 
         // --- CORE PROCESS (MANUAL & JSON) ---
-        function tambahSoalManual() {
-            const soal = document.getElementById('manual-soal').value.trim();
+        function addQuestionManually() {
+            const question = document.getElementById('manual-soal').value.trim();
             const optA = document.getElementById('opt-A').value.trim();
             const optB = document.getElementById('opt-B').value.trim();
             const optC = document.getElementById('opt-C').value.trim();
             const optD = document.getElementById('opt-D').value.trim();
-            const jawaban = document.getElementById('manual-jawaban').value;
+            const answer = document.getElementById('manual-jawaban').value;
 
-            if (!soal || !optA || !optB || !optC || !optD) {
-                alert('⚠️ Harap isi semua kolom pertanyaan dan pilihan jawaban!');
+            if (!question || !optA || !optB || !optC || !optD) {
+                alert('⚠️ Please fill in all question and answer option fields!');
                 return;
             }
 
-            daftarSoal.push({
-                soal: soal,
-                pilihan: [optA, optB, optC, optD],
-                jawaban: jawaban
+            questionList.push({
+                question: question,
+                options: [optA, optB, optC, optD],
+                answer: answer
             });
             
-            simpanDataKeStorage();
-            bersihkanFormManual();
-            perbaruiTampilan();
+            saveDataToStorage();
+            clearManualForm();
+            updateDisplay();
         }
 
-        function bersihkanFormManual() {
+        function clearManualForm() {
             document.getElementById('manual-soal').value = '';
             document.getElementById('opt-A').value = '';
             document.getElementById('opt-B').value = '';
@@ -233,14 +1065,14 @@
         function loadTemplateJSON() {
             const template = [
                 {
-                    "soal": "Siapakah pencipta lagu kebangsaan Indonesia Raya?",
-                    "pilihan": ["W.R. Supratman", "C. Simanjuntak", "Ibu Sud", "Ismail Marzuki"],
-                    "jawaban": "A"
+                    "question": "Who composed the Indonesian national anthem, Indonesia Raya?",
+                    "options": ["W.R. Supratman", "C. Simanjuntak", "Ibu Sud", "Ismail Marzuki"],
+                    "answer": "A"
                 },
                 {
-                    "soal": "Planet manakah yang paling dekat dengan Matahari?",
-                    "pilihan": ["Venus", "Mars", "Merkurius", "Bumi"],
-                    "jawaban": "C"
+                    "question": "Which planet is closest to the Sun?",
+                    "options": ["Venus", "Mars", "Mercury", "Earth"],
+                    "answer": "C"
                 }
             ];
             document.getElementById('json-input').value = JSON.stringify(template, null, 2);
@@ -248,75 +1080,75 @@
 
         function importJSON() {
             const jsonText = document.getElementById('json-input').value.trim();
-            if (!jsonText) return alert('⚠️ Kolom JSON masih kosong!');
+            if (!jsonText) return alert('⚠️ JSON input is empty!');
 
             try {
                 const parsed = JSON.parse(jsonText);
-                if (!Array.isArray(parsed)) return alert('⚠️ Format JSON harus berupa Array!');
+                if (!Array.isArray(parsed)) return alert('⚠️ JSON format must be an array!');
 
                 let validCount = 0;
                 parsed.forEach((item) => {
-                    if (item.soal && Array.isArray(item.pilihan) && item.pilihan.length >= 4 && item.jawaban) {
-                        let jawabanValid = String(item.jawaban).toUpperCase();
-                        if (!['A', 'B', 'C', 'D'].includes(jawabanValid)) {
-                            const idx = item.pilihan.findIndex(p => p.toLowerCase() === String(item.jawaban).toLowerCase());
-                            jawabanValid = idx !== -1 ? ['A', 'B', 'C', 'D'][idx] : 'A';
+                    if (item.question && Array.isArray(item.options) && item.options.length >= 4 && item.answer) {
+                        let validAnswer = String(item.answer).toUpperCase();
+                        if (!['A', 'B', 'C', 'D'].includes(validAnswer)) {
+                            const idx = item.options.findIndex(p => p.toLowerCase() === String(item.answer).toLowerCase());
+                            validAnswer = idx !== -1 ? ['A', 'B', 'C', 'D'][idx] : 'A';
                         }
-                        daftarSoal.push({
-                            soal: item.soal,
-                            pilihan: item.pilihan.slice(0, 4),
-                            jawaban: jawabanValid
+                        questionList.push({
+                            question: item.question,
+                            options: item.options.slice(0, 4),
+                            answer: validAnswer
                         });
                         validCount++;
                     }
                 });
 
-                simpanDataKeStorage();
-                alert(`✅ Berhasil mengimpor ${validCount} soal!`);
+                saveDataToStorage();
+                alert(`✅ Successfully imported ${validCount} questions!`);
                 document.getElementById('json-input').value = '';
-                perbaruiTampilan();
+                updateDisplay();
             } catch (e) {
-                alert('❌ Gagal memproses JSON. Periksa tanda baca.\nError: ' + e.message);
+                alert('❌ Failed to process JSON. Please check the syntax.\nError: ' + e.message);
             }
         }
 
-        function hapusSoal(index) {
-            daftarSoal.splice(index, 1);
-            simpanDataKeStorage();
-            perbaruiTampilan();
+        function deleteQuestion(index) {
+            questionList.splice(index, 1);
+            saveDataToStorage();
+            updateDisplay();
         }
 
-        function clearSemuaSoal() {
-            if (confirm('Apakah Anda yakin ingin menghapus semua soal?')) {
-                daftarSoal = [];
-                simpanDataKeStorage();
-                perbaruiTampilan();
+        function clearAllQuestions() {
+            if (confirm('Are you sure you want to delete all questions?')) {
+                questionList = [];
+                saveDataToStorage();
+                updateDisplay();
             }
         }
 
-        function perbaruiTampilan() {
+        function updateDisplay() {
             const container = document.getElementById('soal-list-container');
-            document.getElementById('count-badge').innerText = daftarSoal.length;
+            document.getElementById('count-badge').innerText = questionList.length;
 
-            if (daftarSoal.length === 0) {
-                container.innerHTML = `<p class="text-sm text-gray-400 text-center py-6">Belum ada soal terkumpul.</p>`;
+            if (questionList.length === 0) {
+                container.innerHTML = `<p class="text-sm text-gray-400 text-center py-6">No questions have been added yet.</p>`;
                 return;
             }
 
             container.innerHTML = '';
-            daftarSoal.forEach((item, idx) => {
+            questionList.forEach((item, idx) => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = "p-3 bg-gray-50 border border-gray-200 rounded-md relative text-left group hover:border-indigo-300 transition-colors";
                 itemDiv.innerHTML = `
-                    <div class="font-medium text-gray-800 pr-6 text-xs md:text-sm">#${idx + 1}. ${item.soal}</div>
+                    <div class="font-medium text-gray-800 pr-6 text-xs md:text-sm">#${idx + 1}. ${item.question}</div>
                     <div class="grid grid-cols-2 gap-1 mt-1.5 text-xs text-gray-500">
-                        <div>A: ${item.pilihan[0]}</div>
-                        <div>B: ${item.pilihan[1]}</div>
-                        <div>C: ${item.pilihan[2]}</div>
-                        <div>D: ${item.pilihan[3]}</div>
+                        <div>A: ${item.options[0]}</div>
+                        <div>B: ${item.options[1]}</div>
+                        <div>C: ${item.options[2]}</div>
+                        <div>D: ${item.options[3]}</div>
                     </div>
-                    <div class="mt-1 text-xs text-emerald-600 font-semibold">Kunci: ${item.jawaban}</div>
-                    <button onclick="hapusSoal(${idx})" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 font-bold text-xs cursor-pointer">✕</button>
+                    <div class="mt-1 text-xs text-emerald-600 font-semibold">Answer: ${item.answer}</div>
+                    <button onclick="deleteQuestion(${idx})" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 font-bold text-xs cursor-pointer">✕</button>
                 `;
                 container.appendChild(itemDiv);
             });
@@ -324,21 +1156,21 @@
 
         // --- EXPORT TOOLS ---
         function downloadJSON() {
-            if (daftarSoal.length === 0) return alert('Belum ada data soal.');
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(daftarSoal, null, 2));
+            if (questionList.length === 0) return alert('No question data available.');
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(questionList, null, 2));
             const downloadAnchor = document.createElement('a');
             downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "cerdas_cermat_soal.json");
+            downloadAnchor.setAttribute("download", "quiz_questions.json");
             document.body.appendChild(downloadAnchor);
             downloadAnchor.click();
             downloadAnchor.remove();
         }
 
         function salinJSON() {
-            if (daftarSoal.length === 0) return alert('Belum ada data soal.');
-            navigator.clipboard.writeText(JSON.stringify(daftarSoal, null, 2))
-                .then(() => alert('📋 JSON berhasil disalin ke clipboard!'))
-                .catch(err => alert('Gagal menyalin text: ' + err));
+            if (questionList.length === 0) return alert('No question data available.');
+            navigator.clipboard.writeText(JSON.stringify(questionList, null, 2))
+                .then(() => alert('📋 JSON copied to clipboard successfully!'))
+                .catch(err => alert('Failed to copy text: ' + err));
         }
 
         // --- GAME SIMULATION LOGIC ---
@@ -346,7 +1178,7 @@
             const emptyDiv = document.getElementById('game-empty');
             const activeDiv = document.getElementById('game-active');
             
-            if (daftarSoal.length === 0) {
+            if (questionList.length === 0) {
                 emptyDiv.classList.remove('hidden');
                 activeDiv.classList.add('hidden');
                 return;
@@ -356,83 +1188,83 @@
             activeDiv.classList.remove('hidden');
             
             gameState.currentIndex = 0;
-            gameState.skor = 0;
-            tampilkanSoalGame();
+            gameState.score = 0;
+            showGameQuestion();
         }
 
-        function tampilkanSoalGame() {
-            const soalSaatIni = daftarSoal[gameState.currentIndex];
-            gameState.sudahDijawab = false;
+        function showGameQuestion() {
+            const currentQuestion = questionList[gameState.currentIndex];
+            gameState.answered = false;
             
             document.getElementById('game-index').innerText = gameState.currentIndex + 1;
-            document.getElementById('game-total').innerText = daftarSoal.length;
-            document.getElementById('game-score').innerText = `Skor: ${gameState.skor}`;
-            document.getElementById('game-soal-text').innerText = soalSaatIni.soal;
+            document.getElementById('game-total').innerText = questionList.length;
+            document.getElementById('game-score').innerText = `Score: ${gameState.score}`;
+            document.getElementById('game-soal-text').innerText = currentQuestion.question;
             
-            const containerPilihan = document.getElementById('game-options-container');
-            containerPilihan.innerHTML = '';
+            const optionsContainer = document.getElementById('game-options-container');
+            optionsContainer.innerHTML = '';
             
             const feedback = document.getElementById('game-feedback');
             feedback.classList.add('hidden');
             document.getElementById('btn-next-game').classList.add('hidden');
             
-            const labelPilihan = ['A', 'B', 'C', 'D'];
-            soalSaatIni.pilihan.forEach((pil, idx) => {
-                const huruf = labelPilihan[idx];
+            const optionLabels = ['A', 'B', 'C', 'D'];
+            currentQuestion.options.forEach((option, idx) => {
+                const letter = optionLabels[idx];
                 const btn = document.createElement('button');
                 btn.className = "w-full p-3 text-left border border-gray-300 rounded-lg hover:bg-indigo-100 transition font-medium cursor-pointer flex items-center gap-3";
-                btn.innerHTML = `<span class="bg-indigo-100 text-indigo-700 w-7 h-7 flex items-center justify-center rounded-full font-bold text-xs">${huruf}</span> ${pil}`;
-                btn.onclick = () => cekJawaban(huruf, btn);
-                containerPilihan.appendChild(btn);
+                btn.innerHTML = `<span class="bg-indigo-100 text-indigo-700 w-7 h-7 flex items-center justify-center rounded-full font-bold text-xs">${letter}</span> ${option}`;
+                btn.onclick = () => checkAnswer(letter, btn);
+                optionsContainer.appendChild(btn);
             });
         }
 
-        function cekJawaban(pilihanUser, tombolDipilih) {
-            if (gameState.sudahDijawab) return;
-            gameState.sudahDijawab = true;
+        function checkAnswer(userChoice, selectedButton) {
+            if (gameState.answered) return;
+            gameState.answered = true;
             
-            const soalSaatIni = daftarSoal[gameState.currentIndex];
+            const currentQuestion = questionList[gameState.currentIndex];
             const feedback = document.getElementById('game-feedback');
             feedback.classList.remove('hidden');
             
-            const containerPilihan = document.getElementById('game-options-container');
-            const tombols = containerPilihan.querySelectorAll('button');
-            const labelPilihan = ['A', 'B', 'C', 'D'];
+            const optionsContainer = document.getElementById('game-options-container');
+            const buttons = optionsContainer.querySelectorAll('button');
+            const optionLabels = ['A', 'B', 'C', 'D'];
             
-            tombols.forEach((btn, idx) => {
-                const huruf = labelPilihan[idx];
+            buttons.forEach((btn, idx) => {
+                const letter = optionLabels[idx];
                 btn.classList.remove('hover:bg-indigo-100');
-                if (huruf === soalSaatIni.jawaban) {
+                if (letter === currentQuestion.answer) {
                     btn.className += " bg-emerald-100 border-emerald-500 text-emerald-800";
                     btn.querySelector('span').className = "bg-emerald-500 text-white w-7 h-7 flex items-center justify-center rounded-full font-bold text-xs";
                 }
             });
 
-            if (pilihanUser === soalSaatIni.jawaban) {
-                gameState.skor += 10;
-                feedback.innerText = "🎉 Jawaban Kamu BENAR! (+10 Poin)";
+            if (userChoice === currentQuestion.answer) {
+                gameState.score += 10;
+                feedback.innerText = "🎉 Correct! (+10 Points)";
                 feedback.className = "mt-4 p-3 rounded-md text-center font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200";
             } else {
-                tombolDipilih.className += " bg-red-100 border-red-500 text-red-800";
-                tombolDipilih.querySelector('span').className = "bg-red-500 text-white w-7 h-7 flex items-center justify-center rounded-full font-bold text-xs";
-                feedback.innerText = `❌ Jawaban Kamu SALAH. Kunci Jawaban yang benar adalah (${soalSaatIni.jawaban})`;
+                selectedButton.className += " bg-red-100 border-red-500 text-red-800";
+                selectedButton.querySelector('span').className = "bg-red-500 text-white w-7 h-7 flex items-center justify-center rounded-full font-bold text-xs";
+                feedback.innerText = `❌ Incorrect. The correct answer is (${currentQuestion.answer})`;
                 feedback.className = "mt-4 p-3 rounded-md text-center font-semibold bg-red-100 text-red-800 border border-red-200";
             }
             
-            document.getElementById('game-score').innerText = `Skor: ${gameState.skor}`;
+            document.getElementById('game-score').innerText = `Score: ${gameState.score}`;
             document.getElementById('btn-next-game').classList.remove('hidden');
             
-            if (gameState.currentIndex === daftarSoal.length - 1) {
-                document.getElementById('btn-next-game').innerText = "Selesai ✨";
+            if (gameState.currentIndex === questionList.length - 1) {
+                document.getElementById('btn-next-game').innerText = "Finish ✨";
             }
         }
 
         function nextGameQuestion() {
-            if (gameState.currentIndex < daftarSoal.length - 1) {
+            if (gameState.currentIndex < questionList.length - 1) {
                 gameState.currentIndex++;
-                tampilkanSoalGame();
+                showGameQuestion();
             } else {
-                alert(`🏆 Simulasi Selesai! Skor Akhir Anda: ${gameState.skor}`);
+                alert(`🏆 Quiz Complete! Your Final Score: ${gameState.score}`);
                 resetGame();
             }
         }
@@ -441,5 +1273,5 @@
             initGame();
         }
     </script>
-</body>
-</html>
+
+</body></html>
